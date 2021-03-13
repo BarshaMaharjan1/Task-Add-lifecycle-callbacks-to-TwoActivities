@@ -28,7 +28,6 @@ public class MainActivity extends AppCompatActivity {
         mReplyHeadTextView = findViewById(R.id.text_header_reply);
         mReplyTextView = findViewById(R.id.text_message_reply);
 
-        Log.d(LOG_TAG, "-------");
         Log.d(LOG_TAG,"onCreate");
 
     }
@@ -40,6 +39,19 @@ public class MainActivity extends AppCompatActivity {
         intent.putExtra(EXTRA_MESSAGE, message);
         startActivity(intent);
         startActivityForResult(intent, TEXT_REQUEST);
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == TEXT_REQUEST) {
+            if (resultCode == RESULT_OK) {
+            }
+        }
+        String reply = data.getStringExtra(SecondActivity.EXTRA_REPLY);
+        mReplyHeadTextView.setVisibility(View.VISIBLE);
+        mReplyTextView.setText(reply);
+        mReplyTextView.setVisibility(View.VISIBLE);
     }
 
     @Override
