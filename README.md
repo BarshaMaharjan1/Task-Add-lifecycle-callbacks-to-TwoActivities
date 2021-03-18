@@ -1,5 +1,4 @@
 # Task-Add-lifecycle-callbacks-to-TwoActivities
-<img src="hhg.gif" width="150">
 
 <img src="c1.png" width="150">
 
